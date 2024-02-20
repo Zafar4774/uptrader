@@ -10,4 +10,10 @@ def index(request):
 def menu_detail(request, menu_id):
     menu_item = MenuItem.objects.get(id=menu_id)
     children = menu_item.children.all()
-    return render(request, 'menu_detail.html', {'menu_item': menu_item, 'children': children})
+    return render(request, 'menu_detail.html',
+                  {'menu_item': menu_item, 'children': children, 'menu_image': menu_item.image})
+
+
+def draw_menu(request, menu_id):  # Добавьте это
+    menu_item = MenuItem.objects.get(id=menu_id)
+    return render(request, 'draw_menu.html', {'menu_item': menu_item})

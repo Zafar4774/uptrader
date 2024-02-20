@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import index, menu_detail
+from core.views import index, menu_detail, draw_menu
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('menu/<int:menu_id>/', menu_detail, name='menu_detail'),
+    path('draw_menu/<int:menu_id>/', draw_menu, name='draw_menu'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
