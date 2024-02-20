@@ -1,0 +1,9 @@
+{% load menu_tags %}
+
+<h1>Главная страница</h1>
+
+{% for menu in main_menu %}
+  <li>
+    <a href="{% url 'menu_detail' menu.id %}">{{ menu.title }}</a>
+  </li>
+{% endfor %}

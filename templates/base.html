@@ -1,0 +1,17 @@
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+  <nav>
+    {% show_menu menu_item %}
+  </nav>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+</body>
+</html>
