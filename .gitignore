@@ -240,7 +240,7 @@ cython_debug/
 # mkdocs documentation
 
 # mypy
-
+.idea
 # Pyre type checker
 
 # pytype static type analyzer
